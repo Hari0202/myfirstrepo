@@ -16,7 +16,7 @@ def calc_dist(lat1, lon1, lat2, lon2):
 
 def get_dist(meteor):
     return meteor.get('distance', math.inf)
-    
+
 if __name__ == '__main__':
     my_loc = (29.424122, -98.493628)
 
@@ -32,4 +32,10 @@ if __name__ == '__main__':
 
     meteor_data.sort(key=get_dist)
 
-    print(meteor_data[0:10])
+print(meteor_data[0:10])
+print('Below is the list of metero fallen nearest to my location are')
+Name_loc = meteor_data[0:10]
+for location in Name_loc:
+    for key,value in location.items():
+        if key =='name':
+            print(value)
